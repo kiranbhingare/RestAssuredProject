@@ -1,0 +1,80 @@
+{
+  "users": [
+    {
+      "firstname": "Kiran",
+      "lastname": "Bhingare",
+      "subjectid": 1,
+      "id": 1
+    },
+    {
+      "firstname": "Henry",
+      "lastname": "Ford",
+      "subjectid": 88,
+      "id": 101
+    },
+    {
+      "firstname": "John",
+      "subjectid": 2,
+      "lastname": "Sena",
+      "id": 102
+    },
+    {
+      "firstname": "Dipak",
+      "subjectid": 1,
+      "lastname": "Patil",
+      "id": 104
+    },
+    {
+      "firstname": "Dipak",
+      "subjectid": 1,
+      "lastname": "Patil",
+      "id": 105
+    },
+    {
+      "firstname": "Dipak",
+      "subjectid": 1,
+      "lastname": "Patil",
+      "id": 106
+    },
+    {
+      "firstname": "Dipak",
+      "subjectid": 1,
+      "lastname": "Patil",
+      "id": 107
+    },
+    {
+      "firstname": "Dipak",
+      "subjectid": 1,
+      "lastname": "Patil",
+      "id": 108
+    },
+    {
+      "firstname": "Dipak",
+      "subjectid": 1,
+      "lastname": "Patil",
+      "id": 109
+    },
+    {
+      "firstname": "Dipak",
+      "subjectid": 1,
+      "lastname": "Patil",
+      "id": 110
+    },
+    {
+      "firstname": "Dipak",
+      "subjectid": 1,
+      "lastname": "Patil",
+      "id": 111
+    }
+  ],
+  "subjects": [
+    {
+      "name": "Automation",
+      "id": 2
+    },
+    {
+      "name": "DevOps",
+      "id": 77
+    }
+  ]
+}
