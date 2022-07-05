@@ -11,7 +11,7 @@ import org.testng.annotations.Test;
 
 import io.restassured.http.ContentType;
 
-public class put_patch_delete {
+public class put_patch_delete_002 {
 	
 	@Test
 	public void put_request() {

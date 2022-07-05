@@ -17,9 +17,6 @@ import io.restassured.http.ContentType;
 //import io.restassured.RestAssured;
 import io.restassured.response.Response;
 
-
-
-
 public class test_001 {
 	@Test
 	public void first_test() {
