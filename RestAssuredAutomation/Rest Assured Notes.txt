@@ -21,17 +21,17 @@ testng, restassured -> dependancy
 Creating your own API's
 -----------------------------------------------------
 1. Install node.js
-2. Intstall json server by   running following command
-		npm install -g json-server
-3. Start the json server with following command-
-		json-server --watch db.json
---- db.json is an json file in which we are having all API (dummy) data
+2. Intstall JSON server by   running following command
+		npm install -g JSON-server
+3. Start the JSON server with following command-
+		JSON-server --watch db.JSON
+--- db.JSON is an JSON file in which we are having all API (dummy) data
 
 {
   "posts": [
     {
       "id": 1,
-      "title": "json-server",
+      "title": "JSON-server",
       "author": "typicode"
     }
   ],
@@ -56,12 +56,12 @@ Creating your own API's
 [
     {
       "id": 1,
-      "title": "json-server",
+      "title": "JSON-server",
       "author": "typicode"
     }
 ]
 
-4. Create dummy api data (in same db.json by deleting the previous data)
+4. Create dummy api data (in same db.JSON by deleting the previous data)
 	{
 		"users" : [
 			{
@@ -97,5 +97,23 @@ Creating your own API's
 
 How to validate JSON Schema
 --------------------------------------------------------------------------
+-- JSON Schema is an IETF standard providing a format for what JSON data is required for a given application and how to interact with it. 
+-- Applying such standards for a JSON document lets you enforce consistency and data validity across similar JSON data.
 1. Create JSON Scheme
-
+	-- Convert JSON to JSON schema from online link from google -> https://www.liquid-technologies.com/online-JSON-to-schema-converter
+	-- Go to reqres.in and take the first request GET (List Users)
+	-- Go to the response and copy it 
+	-- Paste the response in JSON schema converter and click on generate schema
+2. Add JSON Schema file in classpath
+	-- Add the JSON schema in target/classes folder by creating schema.JSON (The classes folder visible in system explorer only)
+3. Add Maven Dependancy for JSON Schema validator from restassured 
+4. Create a new function to validate json response against schema
+5. Run and Validate	
+	-- If you want to validate the response then change the type of any parameter and check, test case will get failed. 
+	
+How to Validate the SOAP XML Response
+----------------------------------------------------------------------------------------------------------------
+	
+	
+	
+	
