@@ -113,7 +113,93 @@ How to validate JSON Schema
 	
 How to Validate the SOAP XML Response
 ----------------------------------------------------------------------------------------------------------------
-	
-	
-	
-	
+1. Create a class
+2. Create a function and annotate with @Test
+3. Add base URI
+4. Go to google and search for -> sample web service for testing
+	-> Directly can use this -- http:// www.dneonline.com/calculator.asmx
+	-> Add "wizdler" extension to the chrome for browsing WSDL
+	-> Click on service description in url.
+	-> Then this extension will get open and if you click on it, will show all the requests.
+	-> Copy and paste the URI here in the baseURI -> http://www.dneonline.com/
+5. Provide headers and body (by using given statement)
+	-> To get the request body from the file
+		-> Create a xml file at any location in your system explorer and add the xml for Add request in that xml file
+		-> In that file instead of data types, I need to add some values. 
+6. Get the file in the code
+	-> The apache commons dependancy is needed for this. 
+7. Add code to check the file exists
+8. send post request
+	-> pass the endpoint which is available in request body to the post request. 
+9. Add the expected conditions and validation points
+	-> It will give the response in the file with addResult. 
+		
+ Validate SOAP XML Response Body
+ -------------------------------------------------------------------
+ -> Go to freeformatter.com
+ -> Click on xpath tester
+ -> Paste the xml response from the console after running the test case in XMl input
+
+ <soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <soap:Body>
+    <AddResponse xmlns="http://tempuri.org/">
+      <AddResult>7</AddResult>
+    </AddResponse>
+  </soap:Body>
+</soap:Envelope>
+
+-> generate the xpath for AddResult and write it into the Xpath xpression, because we want to test this	
+	//*:AddResult/text()
+-> Click on evaluate xpath
+-> It will give --> Text='7'
+-> This xpath can be used in the code
+
+XML Schema Validation
+-----------------------------------------------------------------------------
+--> It describes the structure of an XML document is written in XML. 
+-> XML Schema or XSD (XML Schema Definition)
+-> Sample XML document
+
+<class>
+	<student>
+		<firstname>Kiran</firstname>
+		<lastname>Bhingare</lastname>
+		<age>26</age>
+	</student>
+</class>
+
+-> XML Schema for above document
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="class">
+		<xs:complexType>  // because some child element is available in this class tag
+			<xs:sequence> //sequence for child element apperance
+				<xs:element name="student">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="firstname" type="xs:string">
+							<xs:element name="lastname" type="xs:string">
+							<xs:element name="age" type="xs:int">
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>
+
+Validation of above schema: 
+1. Create a get XML Schema (XSD)
+	-> Go to google and search for xml schema generator
+		-> freeformatter.com
+		-> Copy the same xml for add request for the calculator result schema
+		-> Paste the response in freeformatter XSD generator
+		-> Instead of integer add some value and Generate the XSD
+		-> Copy this generated XML Schema and create a new xsd file -> calculator.xsd
+		-> Add this file in project classpath -> Right click -> build path -> configure -> source (will get the default classpath folder location here)
+		-> Can add this file in src/main/java or /resources
+		-> then the file will automatically added into target/classes folder
+		-> click on project and build automatically, the the files might be visible in target folder
+2. Add code to validate the XML Response against the XML Schema (XSD)
+		-> If any changes is made in xsd file then build of the project need to be done after that to get the latest changes
+		
+		
