@@ -3,11 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="Tests.XMLSchemaValidation_006">
+      <class name="Tests.test_001">
         <methods>
-          <include name="SchemaValidation"/>
+          <include name="second_test"/>
+          <include name="post_request"/>
+          <include name="first_test"/>
         </methods>
-      </class> <!-- Tests.XMLSchemaValidation_006 -->
+      </class> <!-- Tests.test_001 -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

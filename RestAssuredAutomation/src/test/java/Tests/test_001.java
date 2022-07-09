@@ -18,6 +18,7 @@ import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 
 public class test_001 {
+	
 	@Test
 	public void first_test() {
 		
@@ -25,7 +26,6 @@ public class test_001 {
 		Response response = get("https://reqres.in/api/users?page=2");
 		System.out.println(response.getStatusCode());
 		System.out.println(response.getBody().asString());
-		
 		Assert.assertEquals(response.getStatusCode(), 200);
 	}
 	
@@ -72,5 +72,7 @@ public class test_001 {
 			post("/users").
 		then().
 			statusCode(201);
+		System.out.println("Kiran");
+		
 	}
 }
